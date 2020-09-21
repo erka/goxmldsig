@@ -90,19 +90,6 @@ func (c *c14N10CommentCanonicalizer) Algorithm() AlgorithmID {
 	return CanonicalXML10CommentAlgorithmId
 }
 
-func composeAttr(space, key string) string {
-	if space != "" {
-		return space + ":" + key
-	}
-
-	return key
-}
-
-type c14nSpace struct {
-	a    etree.Attr
-	used bool
-}
-
 const nsSpace = "xmlns"
 
 // canonicalPrep accepts an *etree.Element and transforms it into one which is ready
